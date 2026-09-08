@@ -411,7 +411,17 @@
 }
 
 /* Print styles */
+@page {
+  margin: 15mm;
+  size: A4;
+}
+
 @media print {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: white !important;
+  }
   body * {
     visibility: hidden;
   }
@@ -423,6 +433,12 @@
     left: 0;
     top: 0;
     width: 100%;
-    padding: 20mm;
+    padding: 0;
+    margin: 0;
+    background: white !important;
+  }
+  /* Hide browser default header/footer (date, URL, page title) */
+  @page :first {
+    margin-top: 0;
   }
 }
