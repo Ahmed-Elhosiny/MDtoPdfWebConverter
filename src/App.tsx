@@ -439,7 +439,10 @@ const App: React.FC = () => {
   <style>
     @page {
       size: ${pdfOptions.pageSize === 'letter' ? 'letter' : 'A4'};
-      margin: ${pdfOptions.margin}mm;
+      margin: 0;
+    }
+    @page :first {
+      margin-top: 0;
     }
     * { box-sizing: border-box; }
     body {
@@ -449,7 +452,7 @@ const App: React.FC = () => {
       color: #1e293b;
       max-width: 100%;
       margin: 0;
-      padding: 0;
+      padding: ${pdfOptions.margin}mm;
     }
     ${pdfOptions.title ? `
     .title-page {
